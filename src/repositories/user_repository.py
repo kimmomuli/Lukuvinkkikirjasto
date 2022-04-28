@@ -19,7 +19,7 @@ class UserRepository:
         )
         database.session.commit()
 
-    def log_in(self, username: str, password: str) -> bool:
+    def login(self, username: str, password: str) -> bool:
         sql = """SELECT password
                  FROM users
                  WHERE username = :username"""

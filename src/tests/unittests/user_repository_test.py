@@ -7,19 +7,19 @@ class TestUserRepository(unittest.TestCase):
         user_repository.delete_all()
         user_repository.add_user("username", "password")
 
-    def test_loggin_in_with_correct_username_and_password(self):
-        result = user_repository.log_in("username", "password")
+    def test_logging_in_with_correct_username_and_password(self):
+        result = user_repository.login("username", "password")
         self.assertTrue(result)
 
     def test_logging_in_with_wrong_username(self):
-        result = user_repository.log_in("wrong_username", "password")
+        result = user_repository.login("wrong_username", "password")
         self.assertFalse(result)
 
     def test_logging_in_with_wrong_password(self):
-        result = user_repository.log_in("username", "wrong_password")
+        result = user_repository.login("username", "wrong_password")
         self.assertFalse(result)
 
-    def test_user_exists_method_when_uesr_exists(self):
+    def test_user_exists_method_when_user_exists(self):
         result = user_repository.user_exists("username")
         self.assertTrue(result)
 
